@@ -1,0 +1,1224 @@
+
+/* ==========================================
+   1. COLOR PALETTE & BASE VARIABLES
+========================================== */
+
+:root {
+    --primary-green: #2C4C3B;
+    --secondary-sand: #E8DCC4;
+    --background-white: #F9F9F9;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+
+    --card-bg: #F4F3EB;
+    --heading-brown: #86796E;
+    --text-olive: #5B5A49;
+
+    --heading-font: 'Impact', sans-serif;
+    --body-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* ==========================================
+   2. GLOBAL STYLES
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+p {
+    font-family: var(--body-font);
+    color: var(--text-olive);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    font-weight: normal;
+    color: var(--heading-brown);
+}
+
+
+/* ==========================================
+   3. HERO SECTION
+========================================== */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+
+    background: url('../image/background_landingpage.png')
+                center center / cover no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* Top dark overlay */
+
+.top-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Bottom white fade */
+
+.bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(249, 249, 249, 0) 0%,
+        rgba(249, 249, 249, 0.65) 55%,
+        var(--background-white) 100%
+    );
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   4. NAVIGATION BAR
+========================================== */
+
+.navbar {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    padding: 20px 50px;
+    gap: 25px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    background: #FFFFFF;
+    padding: 2px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+
+    font-family: var(--body-font);
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+
+    transition: all 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+
+/* ==========================================
+   5. HERO CONTENT
+========================================== */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    padding-left: 50px;
+    margin-top: 30px;
+
+    max-width: 800px;
+}
+
+.hero-title {
+    font-family: var(--heading-font);
+    font-size: 4rem;
+    font-weight: normal;
+
+    line-height: 1.1;
+    letter-spacing: 1px;
+
+    color: var(--text-light);
+
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+
+    margin-bottom: 18px;
+}
+
+.hero-subtitle {
+    font-family: var(--body-font);
+    font-size: 1rem;
+    font-weight: 500;
+
+    line-height: 1.6;
+    color: var(--text-light);
+
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ==========================================
+   6. CHECK IN BUTTON
+========================================== */
+
+.action-wrapper {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    justify-content: flex-end;
+
+    padding-right: 75px;
+    padding-bottom: 120px;
+}
+
+.btn-checkin {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+
+    border: none;
+    border-radius: 30px;
+
+    padding: 13px 32px;
+
+    font-family: var(--body-font);
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.btn-checkin:hover {
+    background-color: #3B604B;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================================
+   7. SECTION 2 - HIGHLIGHTS GALLERY
+   INFINITE LOOP CAROUSEL
+========================================== */
+
+.section-highlights {
+    width: 100%;
+    background-color: var(--background-white);
+
+    padding: 45px 50px 65px;
+}
+
+.highlights-container {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+/* Highlights heading */
+
+.highlights-headline {
+    flex: 1;
+    max-width: 380px;
+}
+
+.highlights-headline h2 {
+    font-family: var(--heading-font);
+    font-size: 2.2rem;
+    font-weight: normal;
+
+    line-height: 1.35;
+    letter-spacing: 0.5px;
+
+    color: var(--heading-brown);
+}
+
+/* Carousel main wrapper */
+
+.highlights-carousel {
+    flex: 2 1 0;
+    min-width: 0;
+    width: 100%;
+    position: relative;
+}
+
+/* Scrollable gallery track */
+
+.highlights-cards {
+    display: flex;
+    gap: 20px;
+
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: auto;
+    overscroll-behavior-x: contain;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Hide horizontal scrollbar */
+
+.highlights-cards::-webkit-scrollbar {
+    display: none;
+}
+
+.highlights-cards:focus-visible {
+    outline: 2px solid var(--primary-green);
+    outline-offset: 4px;
+}
+
+/* Individual gallery card */
+
+.highlights-cards .card {
+    flex: 0 0 calc((100% - 40px) / 3);
+    min-width: 0;
+    height: 350px;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    background-color: var(--card-bg);
+
+    scroll-snap-align: start;
+}
+
+/* Gallery images */
+
+.highlights-cards .card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+}
+
+/* Image hover effect */
+
+.highlights-cards .card:hover img {
+    transform: scale(1.04);
+}
+
+/* Navigation buttons */
+
+.highlights-navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 12px;
+    margin-top: 18px;
+}
+
+/* Previous and Next arrows */
+
+.highlight-arrow {
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--primary-green);
+    border-radius: 50%;
+
+    background-color: transparent;
+    color: var(--primary-green);
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.highlight-arrow:hover {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+
+    transform: translateY(-2px);
+}
+
+.highlight-arrow:active {
+    transform: scale(0.95);
+}
+
+.highlight-arrow:focus-visible {
+    outline: 2px solid var(--primary-green);
+    outline-offset: 3px;
+}
+
+
+/* ==========================================
+   8. SECTION 3 - ABOUT US
+========================================== */
+
+.section-about {
+    width: 100%;
+    background-color: var(--background-white);
+    padding-bottom: 60px;
+}
+
+/* About banner */
+
+.about-banner {
+    position: relative;
+
+    width: 100%;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+
+.about-banner-bg {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.about-banner-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.about-banner-title {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1100px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about-banner-title h2 {
+    font-family: var(--heading-font);
+    font-size: 2.6rem;
+    font-weight: normal;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--text-light);
+
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+}
+
+.banner-line {
+    flex: 1;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* About Us top white fade */
+
+.about-banner::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 65px;
+
+    background: linear-gradient(
+        to bottom,
+        var(--background-white) 0%,
+        rgba(249, 249, 249, 0.75) 35%,
+        rgba(249, 249, 249, 0) 100%
+    );
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* About Us bottom white fade */
+
+.about-banner-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 45px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(249, 249, 249, 0),
+        var(--background-white)
+    );
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   9. ABOUT US CONTENT
+========================================== */
+
+.about-content-container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+    padding: 0 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.about-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-family: var(--body-font);
+    font-size: 1.05rem;
+    font-weight: 500;
+
+    line-height: 1.6;
+    color: var(--text-olive);
+}
+
+.about-text.text-right p {
+    text-align: right;
+}
+
+/* About images */
+
+.about-image-wrapper {
+    flex: 1;
+
+    position: relative;
+    height: 300px;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    background-color: var(--card-bg);
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   10. SECTION 4 - MAKE AN INQUIRY
+========================================== */
+
+.section-inquiry {
+    width: 100%;
+    background-color: var(--background-white);
+
+    padding: 0 0 50px;
+}
+
+/* Main inquiry layout */
+
+.inquiry-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 42% 58%;
+
+    align-items: stretch;
+
+    background-color: var(--background-white);
+}
+
+/* Left image */
+
+.inquiry-image-wrapper {
+    width: 100%;
+    height: 480px;
+
+    overflow: hidden;
+}
+
+.inquiry-img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+}
+
+/* Right form */
+
+.inquiry-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 30px 45px;
+
+    background-color: var(--background-white);
+}
+
+.inquiry-title {
+    font-family: var(--body-font);
+    font-size: 1.7rem;
+    font-weight: 500;
+
+    color: var(--primary-green);
+
+    margin-bottom: 18px;
+}
+
+/* Form labels */
+
+.form-section-label,
+.form-label {
+    display: block;
+
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    color: var(--text-olive);
+
+    margin-bottom: 8px;
+}
+
+/* Form structure */
+
+.inquiry-form {
+    width: 100%;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+/* Radio option cards */
+
+.radio-pill {
+    width: 100%;
+    min-height: 43px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    padding: 10px 14px;
+
+    background-color: #EAEAE5;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.radio-pill:hover {
+    background-color: var(--secondary-sand);
+}
+
+.radio-pill input {
+    accent-color: var(--primary-green);
+    cursor: pointer;
+}
+
+.radio-label-text {
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    font-weight: 400;
+
+    color: var(--text-olive);
+}
+
+/* Textarea and email fields */
+
+.form-field {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.form-field textarea,
+.form-field input {
+    width: 100%;
+
+    border: 1px solid #D7D1C4;
+    border-radius: 5px;
+
+    background-color: #FFFFFF;
+
+    padding: 10px 12px;
+
+    font-family: var(--body-font);
+    font-size: 0.95rem;
+
+    color: var(--text-dark);
+
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-field textarea {
+    height: 65px;
+    resize: vertical;
+}
+
+.form-field input {
+    height: 38px;
+}
+
+.form-field textarea:focus,
+.form-field input:focus {
+    border-color: var(--primary-green);
+}
+
+/* Submit button */
+
+.btn-inquire {
+    width: 100%;
+    height: 40px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: var(--primary-green);
+    color: var(--text-light);
+
+    font-family: var(--body-font);
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.btn-inquire:hover {
+    background-color: #3B604B;
+}
+
+
+/* ==========================================
+   11. FOOTER SECTION
+========================================== */
+
+.footer-section {
+    width: 100%;
+
+    background-color: var(--primary-green);
+    color: var(--text-light);
+
+    padding: 35px 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.footer-logo {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    background-color: #FFFFFF;
+    padding: 3px;
+}
+
+.footer-tagline p {
+    color: var(--text-light);
+    font-family: var(--body-font);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.tagline-top {
+    font-weight: 500;
+}
+
+.tagline-bottom {
+    font-weight: 700;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.footer-contact {
+    color: var(--text-light);
+
+    font-family: var(--body-font);
+    font-size: 0.95rem;
+
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-contact:hover {
+    opacity: 0.7;
+}
+
+
+/* ==========================================
+   12. RESPONSIVE DESIGN
+========================================== */
+
+/* Small desktop / laptop */
+
+@media (max-width: 1024px) {
+
+    .hero-title {
+        font-size: 3.3rem;
+    }
+
+    .highlights-container {
+        gap: 25px;
+    }
+
+    .highlights-headline h2 {
+        font-size: 1.9rem;
+    }
+
+    .highlights-cards .card {
+        height: 300px;
+    }
+
+    .about-content-container {
+        gap: 35px;
+    }
+
+    .about-image-wrapper {
+        height: 260px;
+    }
+
+    .inquiry-container {
+        grid-template-columns: 40% 60%;
+    }
+
+    .inquiry-form-wrapper {
+        padding: 25px 30px;
+    }
+}
+
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+    /* Navigation */
+
+    .navbar {
+        padding: 18px 25px;
+        gap: 18px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    /* Hero */
+
+    .hero-section {
+        min-height: 550px;
+    }
+
+    .hero-content {
+        padding-left: 30px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .action-wrapper {
+        padding-right: 30px;
+        padding-bottom: 90px;
+    }
+
+    /* Highlights */
+
+    .section-highlights {
+        padding: 40px 30px 50px;
+    }
+
+    .highlights-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .highlights-headline {
+        max-width: 100%;
+    }
+
+    .highlights-headline h2 {
+        font-size: 1.9rem;
+    }
+
+    .highlights-carousel {
+        flex: none;
+        width: 100%;
+    }
+
+    .highlights-cards {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .highlights-cards .card {
+        flex-basis: calc((100% - 15px) / 2);
+        height: 280px;
+    }
+
+    /* About */
+
+    .about-banner {
+        height: 180px;
+        margin-bottom: 30px;
+    }
+
+    .about-banner-title h2 {
+        font-size: 2rem;
+    }
+
+    .about-block {
+        gap: 20px;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+    }
+
+    .about-image-wrapper {
+        height: 230px;
+    }
+
+    /* Inquiry */
+
+    .inquiry-container {
+        grid-template-columns: 40% 60%;
+    }
+
+    .inquiry-image-wrapper {
+        height: 440px;
+    }
+
+    .inquiry-form-wrapper {
+        padding: 20px;
+    }
+
+    .inquiry-title {
+        font-size: 1.5rem;
+    }
+
+    /* Footer */
+
+    .footer-section {
+        padding: 30px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    /* Navigation */
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* Hero */
+
+    .hero-section {
+        height: 85vh;
+        min-height: 500px;
+    }
+
+    .hero-content {
+        padding: 0 22px;
+        margin-top: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .action-wrapper {
+        padding: 0 22px 75px;
+    }
+
+    /* Highlights */
+
+    .section-highlights {
+        padding: 35px 20px 45px;
+    }
+
+    .highlights-headline h2 {
+        font-size: 1.7rem;
+    }
+
+    .highlights-cards {
+        gap: 10px;
+    }
+
+    .highlights-cards .card {
+        flex-basis: 80%;
+        height: 190px;
+        border-radius: 8px;
+    }
+
+    .highlights-navigation {
+        margin-top: 15px;
+    }
+
+    .highlight-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    /* About */
+
+    .about-banner {
+        height: 150px;
+    }
+
+    .about-banner-title h2 {
+        font-size: 1.6rem;
+    }
+
+    .banner-line {
+        display: none;
+    }
+
+    .about-content-container {
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .about-block,
+    .about-block.reverse {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .about-text p,
+    .about-text.text-right p {
+        text-align: left;
+        font-size: 0.95rem;
+    }
+
+    .about-image-wrapper {
+        width: 100%;
+        height: 230px;
+    }
+
+    /* Inquiry */
+
+    .section-inquiry {
+        padding: 0 0 30px;
+    }
+
+    .inquiry-container {
+        grid-template-columns: 1fr;
+    }
+
+    .inquiry-image-wrapper {
+        height: 260px;
+    }
+
+    .inquiry-form-wrapper {
+        padding: 25px 20px;
+    }
+
+    .inquiry-title {
+        font-size: 1.6rem;
+    }
+
+    .radio-pill {
+        min-height: 40px;
+    }
+
+    /* Footer */
+
+    .footer-section {
+        padding: 25px 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .footer-right {
+        align-items: flex-start;
+    }
+
+    .footer-logo {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+
+/* ==========================================
+   13. REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .highlights-cards .card img,
+    .highlight-arrow {
+        transition: none;
+    }
+
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bella Vista Hotel & Events Place</title>
+  <!-- Google Fonts for typography matching -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero-section">
+
+    <!-- Top Overlay Gradient for Header Text Readability -->
+    <div class="top-overlay"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <a href="#" class="logo-container">
+        <img src="../image/logo.png" alt="Bella Vista Logo" class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#accommodations">Accommodations</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#policies">Policies</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Your Peaceful<br>
+        Sanctuary Awaits.
+      </h1>
+      <p class="hero-subtitle">
+        Rooted in family tradition and elevated by warm Filipino hospitality.<br>
+        Your perfect getaway starts here.
+      </p>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="action-wrapper">
+      <button class="btn-checkin" id="checkInBtn">Check In Now</button>
+    </div>
+
+    <!-- Bottom White Gradient Blur Fade -->
+    <div class="bottom-gradient"></div>
+  </header> <!-- 👈 CLOSE HEADER HERE BEFORE SECTION 2 -->
+
+<!-- SECTION 2: HIGHLIGHTS GALLERY -->
+<section class="section-highlights">
+  <div class="highlights-container">
+
+    <!-- Left Headline Block -->
+    <div class="highlights-headline">
+      <h2>
+        Intimate celebrations.<br>
+        Restful getaways.<br>
+        Pure Bella Vista.
+      </h2>
+    </div>
+
+    <!-- Right Side Carousel -->
+    <div class="highlights-carousel">
+
+      <!-- Scrollable Image Track -->
+      <div class="highlights-cards"
+           id="highlightsTrack"
+           tabindex="0"
+           role="region"
+           aria-label="Bella Vista highlights">
+
+        <!-- Card 1 -->
+        <div class="card">
+          <img src="../image/landingpage_card1.png"
+               alt="Restful getaway experience">
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <img src="../image/landingpage_card2.png"
+               alt="Intimate celebration gathering">
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <img src="../image/landingpage_card3.png"
+               alt="Aerial view of Bella Vista resort">
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <img src="../image/landingpage_card4.jfif"
+               alt="Relaxing swimming pool experience">
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+          <img src="../image/landingpage_card5.jfif"
+               alt="Hotel dining experience">
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+          <img src="../image/landingpage_card6.jfif"
+               alt="Memorable moments at Bella Vista">
+        </div>
+
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="highlights-navigation">
+
+        <button
+          class="highlight-arrow"
+          id="prevHighlight"
+          type="button"
+          aria-label="Previous highlight"
+          aria-controls="highlightsTrack">
+          &#8592;
+        </button>
+
+        <button
+          class="highlight-arrow"
+          id="nextHighlight"
+          type="button"
+          aria-label="Next highlight"
+          aria-controls="highlightsTrack">
+          &#8594;
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  <!-- SECTION 3: ABOUT US -->
+  <section class="section-about" id="about">
+    
+    <!-- Top Header Banner with Overlay Lines -->
+    <div class="about-banner">
+      <!-- REPLACE WITH YOUR BANNER IMAGE PATH -->
+      <img src="../image/landingpage_about1.png" alt="About Us Banner background" class="about-banner-bg">
+      <div class="about-banner-overlay"></div>
+      
+      <div class="about-banner-title">
+        <span class="banner-line"></span>
+        <h2>ABOUT US</h2>
+        <span class="banner-line"></span>
+      </div>
+      
+      <div class="about-banner-bottom-fade"></div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="about-content-container">
+      
+      <!-- Block 1: Left Text, Right Image -->
+      <div class="about-block">
+        <div class="about-text">
+          <p>
+            Bella Vista Hotel & Events Place is a premier eco-chic boutique hotel and 
+            events destination nestled at the scenic foothills of the mountains. It 
+            offers a tranquil, elegant, and exclusive retreat for families, tourists, 
+            and corporate clients looking for a peaceful sanctuary away from the 
+            hustle and bustle of the city
+          </p>
+        </div>
+        <div class="about-image-wrapper">
+          <!-- REPLACE WITH YOUR IMAGE PATH -->
+          <img src="../image/landingpage_about2.png" alt="Eco-chic resort lounge" class="about-img">
+        </div>
+      </div>
+
+      <!-- Block 2: Left Image, Right Text -->
+      <div class="about-block reverse">
+        <div class="about-image-wrapper">
+          <!-- REPLACE WITH YOUR IMAGE PATH -->
+          <img src="../image/landingpage_about3.png" alt="Scenic mountain deck view" class="about-img">
+        </div>
+        <div class="about-text text-right">
+          <p>
+            Established in 2021, Bella Vista began as an exclusive family-owned resthouse. 
+            Due to growing demand for intimate celebrations and restful getaways, it was 
+            expanded and transformed into a boutique hotel and events venue. Today, it 
+            is celebrated for its warm Filipino hospitality, picturesque views, and 
+            top-tier service for both accommodations and special events.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: MAKE AN INQUIRY -->
+  <section class="section-inquiry" id="inquiry">
+    <div class="inquiry-container">
+      
+      <!-- Left Side Image -->
+      <div class="inquiry-image-wrapper">
+        <!-- REPLACE WITH YOUR IMAGE PATH -->
+        <img src="../image/landingpage_inquirypage.png" alt="Outdoor cinema setup" class="inquiry-img">
+      </div>
+
+      <!-- Right Side Form -->
+      <div class="inquiry-form-wrapper">
+        <h2 class="inquiry-title">Make an inquiry</h2>
+
+        <form id="inquiryForm" class="inquiry-form">
+          <label class="form-section-label">What would you like to know?</label>
+          
+          <!-- Radio Options -->
+          <div class="radio-group">
+            <label class="radio-pill">
+              <input type="radio" name="inquiry_type" value="Viewing schedules">
+              <span class="radio-custom"></span>
+              <span class="radio-label-text">Viewing schedules</span>
+            </label>
+
+            <label class="radio-pill">
+              <input type="radio" name="inquiry_type" value="Price and availability">
+              <span class="radio-custom"></span>
+              <span class="radio-label-text">Price and availability</span>
+            </label>
+
+            <label class="radio-pill">
+              <input type="radio" name="inquiry_type" value="Property details">
+              <span class="radio-custom"></span>
+              <span class="radio-label-text">Property details</span>
+            </label>
+
+            <label class="radio-pill">
+              <input type="radio" name="inquiry_type" value="How to apply for a lease">
+              <span class="radio-custom"></span>
+              <span class="radio-label-text">How to apply for a lease</span>
+            </label>
+          </div>
+
+          <!-- Others Textarea -->
+          <div class="form-field">
+            <label for="othersText" class="form-label">Others</label>
+            <textarea id="othersText" name="others" rows="3"></textarea>
+          </div>
+
+          <!-- Email Input -->
+          <div class="form-field">
+            <label for="emailInput" class="form-label">Enter your email*</label>
+            <input type="email" id="emailInput" name="email" required>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-inquire">Inquire now</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER SECTION -->
+  <footer class="footer-section">
+    <div class="footer-container">
+      
+      <!-- Left Side: Logo & Tagline -->
+      <div class="footer-left">
+        <img src="../image/logo.png" alt="Bella Vista Logo" class="footer-logo">
+        <div class="footer-tagline">
+          <p class="tagline-top">Intimate celebrations. Restful getaways.</p>
+          <p class="tagline-bottom">Pure Bella Vista.</p>
+        </div>
+      </div>
+
+      <!-- Right Side: Contact Details -->
+      <div class="footer-right">
+        <a href="mailto:scholarnimalou@gmail.com" class="footer-contact">scholarnimalou@gmail.com</a>
+        <a href="tel:+639667788991" class="footer-contact">+639667788991</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

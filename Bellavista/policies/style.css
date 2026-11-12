@@ -1,0 +1,172 @@
+/* Color Palette & Base Variables */
+:root {
+    --primary-green: #2C4C3B;
+    --secondary-sand: #E8DCC4;
+    --background-white: #F9F9F9;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    
+    /* New colors based on the reference image */
+    --card-bg: #F4F3EB;
+    --heading-brown: #86796E;
+    --text-olive: #5B5A49;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-white);
+    color: var(--text-dark);
+}
+
+/* Navigation */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 10;
+}
+
+.logo img {
+    border-radius: 50%;
+    background: #fff;
+    padding: 2px;
+}
+
+.nav-links {
+    margin-left: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+/* Hero Section with Curved Bottom */
+.hero {
+    position: relative;
+    height: 450px;
+    background: url('../image/policies_hero.png') center/cover no-repeat;
+    border-bottom-left-radius: 50% 15%;
+    border-bottom-right-radius: 50% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    color: var(--text-light);
+    font-size: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+/* New Policy Card Container Layout */
+.policies-container {
+    max-width: 1000px; 
+    margin: -30px auto 80px; 
+    padding: 40px 20px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+}
+
+/* Individual Policy Card Styling */
+.policy-card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    padding: 60px 50px;
+    display: flex;
+    gap: 40px;
+}
+
+/* Left Column: Main Title */
+.policy-card-left {
+    flex: 0 0 35%; 
+    display: flex;
+    align-items: center;
+}
+
+.policy-card-left h2 {
+    font-size: 2.2rem;
+    color: var(--heading-brown);
+    font-family: 'Impact', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+/* Right Column: Policy Items */
+.policy-card-right {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.policy-item h3 {
+    font-size: 1.6rem;
+    color: var(--heading-brown);
+    font-family: 'Impact', sans-serif;
+    margin-bottom: 10px;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+}
+
+.policy-item p {
+    color: var(--text-olive);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .policy-card {
+        flex-direction: column;
+        padding: 40px 30px;
+    }
+    
+    .policy-card-left {
+        align-items: flex-start;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+}
